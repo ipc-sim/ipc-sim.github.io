@@ -1,0 +1,207 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="description" content="Codimensional Incremental Potential Contact (C-IPC))">
+		<meta name="author" content="Minchen Li">
+		<title>C-IPC</title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<style>
+			p {font:10pt Arial}
+			.heading {font-family: 'Open Sans', serif; font-size: 20pt}
+			.subheading {font-family: 'Open Sans', serif; font-size: 11pt}
+			img {-webkit-box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.2);
+			box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.2); -webkit-border-radius: 6px;
+			border-radius: 6px;}
+			.main {width:1000px; background-color:white; margin-top: 0px; margin-left: auto; margin-right:auto;  -webkit-border-radius: 10px;
+			border-radius: 10px;}
+			.regularHeader {font:16pt Playfair Display; margin-top:20px}
+			td {padding-top: 5px; padding-bottom: 5px;}
+			.text {font-family: 'Open Sans', sans-serif; font-size: 11pt; text-align:justify; margin-left:20px; margin-right:20px}
+			a {color:black; text-decoration:none}
+			a:hover  {color:green; text-decoration:underline}
+		</style>
+	</head>
+	<script>
+		function includeHTML() {
+		  var z, i, elmnt, file, xhttp;
+		  /* Loop through a collection of all HTML elements: */
+		  z = document.getElementsByTagName("*");
+		  for (i = 0; i < z.length; i++) {
+			elmnt = z[i];
+			/*search for elements with a certain atrribute:*/
+			file = elmnt.getAttribute("w3-include-html");
+			if (file) {
+			  /* Make an HTTP request using the attribute value as the file name: */
+			  xhttp = new XMLHttpRequest();
+			  xhttp.onreadystatechange = function() {
+				if (this.readyState == 4) {
+				  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+				  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+				  /* Remove the attribute, and call this function once more: */
+				  elmnt.removeAttribute("w3-include-html");
+				  includeHTML();
+				}
+			  }
+			  xhttp.open("GET", file, true);
+			  xhttp.send();
+			  /* Exit the function: */
+			  return;
+			}
+		  }
+		}
+		includeHTML()
+	</script>
+	<body bgcolor="#dedede">
+		<div class="main">
+			<div style="margin: 0pt 15pt 25pt 15pt; padding-top:10px">
+				<div class="heading" style="text-align:center">Codimensional Incremental Potential Contact (C-IPC)</div>
+				<br />
+				<div class="subheading" style="margin-top:-8pt;text-align:center;font-size:13pt">
+					<a href="http://www.seas.upenn.edu/~minchenl/" target="_blank">Minchen Li</a><sup>1,2,3</sup>,&nbsp;
+					<a href="http://dannykaufman.io/" target="_blank">Danny M. Kaufman</a><sup>3</sup>,&nbsp;
+					<a href="https://www.seas.upenn.edu/~cffjiang/" target="_blank">Chenfanfu Jiang</a><sup>1,2</sup>
+					<br />
+					<div style="margin-top:6pt;font-size:11pt"><sup>1</sup>University of California, Los Angeles,&nbsp; <sup>2</sup>University of Pennsylvania,&nbsp; <sup>3</sup>Adobe Research</text></div>
+					<div class="subheading" style="margin-top:8pt;"><span style="font-style: italic">ACM Transactions on Graphics (SIGGRAPH), 2021</span></div>
+				</div>
+				<div align="center" style="clear:none; margin-top:15px">
+					<img src="file/teaser.jpg" style="padding:3pt; width:99%">
+					<div class="text" style="text-align:left; font-size:10pt; margin-top:10pt">
+						<p class="text">
+							<b>Table cloth pull:</b> C-IPC enables high-rate time stepping of codimensional models with intersection-free, accurate, controllable strain-limiting, thickness modeling, and frictional contact. 
+							Here, stepping shell and volumetric FE models at h=0.01s, a square cloth is laid on a table with heavy, stiff volumetric dinnerware (a). 
+							C-IPC stably responds to rapid pulling at varying speeds (b-f) without stretching beyond limits while accurately resolving tight contacts between table edges and dinnnerware.
+							With a slower pull in (b) of 0.5m/s nearly all objects pull off due to friction. As pull speed increase at 1m/s (c) and 2m/s (d), less dinnerware fall off with some just pulled a bit.
+							In (e) and (f) pulling at higher speeds 4m/s or 8m/s leaves the stetting on table with rapid acceleration overcoming friction. 
+							Here too, combined strain-limiting and resolution of elastodynamics generates detailed wrinkling behaviors in the cloth for these faster pulls as it flies off the table.
+						</p>
+					</div>
+				</div>
+				<div class="regularHeader" style="margin-bottom:15px;text-align:left;">Paper</div>
+				<div class="text">
+					<p class="text">
+						<b><a href="file/paper.pdf" target="_blank"> Paper (PDF) </a></b>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+						<b><a href="file/paper_small.pdf" target="_blank"> Low res (PDF) </a></b>
+					</p>
+				</div>
+				<div class="regularHeader" style="text-align:left;">Abstract</div>
+				<div class="text" align="center">
+					<p class="text">
+						We extend the incremental potential contact (IPC) model [Li et al. 2020] for contacting elastodynamics to resolve systems composed of arbitrary combinations of codimensional degrees-of-freedoms. 
+						This enables a unified, interpenetration-free, robust, and stable simulation framework that couples codimension-0,1,2, and 3 geometries seamlessly with frictional contact. 
+						Extending the IPC model to thin structures poses new challenges in computing strain, modeling thickness and determining collisions. 
+						To address these challenges we propose three corresponding contributions. 
+					</p>
+					<p class="text">
+						First, we introduce a C2 constitutive barrier model that directly enforces strain limiting as an energy potential while preserving rest state. 
+						This provides energetically consistent strain limiting models (both isotropic and anisotropic) for cloth that enable strict satisfaction of strain-limit inequalities with direct coupling to both elastodynamics and contact via minimization of the incremental potential. 
+					</p>
+					<p class="text">
+						Second, to capture the geometric thickness of codimensional domains we extend IPC to directly enforce distance offsets. 
+						Our treatment imposes a strict guarantee that mid-surfaces (respectively mid-lines) of shells (respectively rods) will not move closer than applied thickness values, 
+						even as these thicknesses become characteristically small. This enables us to account for thickness in the contact behavior of codimensional structures and so robustly capture challenging contacting geometries; 
+						a number of which, to our knowledge, have not been simulated before. 
+					</p>
+					<p class="text">
+						Third, codimensional models, especially with modeled thickness, mandate strict accuracy requirements that pose a severe challenge to all existing continuous collision detection (CCD) methods. 
+						To address these limitations we develop a new, efficient, simple-to-implement additive CCD (ACCD) method that applies conservative advancement [Mirtich 1996; Zhang et al. 2006] to iteratively refine a lower bound for deforming primitives, converging to time of impact.
+					</p>
+				</div>
+				<div class="regularHeader" style="margin-bottom:15px;text-align:left;">Video</div>
+				<div class="text" align="center">
+					<p class="text">
+						<b><a href="file/CIPC.mp4" target="_blank">Video (MP4, 280.4 MB)</a></b>  
+						<br/> <br/>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/jvBSDXxsgRA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="-webkit-box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.2)"></iframe>
+					</p>
+				</div>
+				<div class="regularHeader" style="margin-bottom:15px;text-align:left;">Source Code and Data</div>
+				<div class="text">
+					<p class="text">
+						<i>coming soon!</i>
+						<!-- <b><a href="https://github.com/ipc-sim/IPC" target="_blank">Codebase</a></b> -->
+					</p>
+				</div>
+				<div class="regularHeader" style="margin-bottom:15px;text-align:left;">BibTex</div>
+				<div class="text">
+					<p class="text">
+						@article{Li2021CIPC,<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;author  = {Minchen Li and Danny M. Kaufman and Chenfanfu Jiang},<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;title   = {Codimensional Incremental Potential Contact},<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;journal = {ACM Transactions on Graphics (SIGGRAPH)},<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;year    = {2021},<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;volume = {40},<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;number = {4}<br/>
+						}
+					</p>
+				</div>
+				<div class="regularHeader" style="margin-bottom:15px;text-align:left;">Supplemental Documents</div>
+				<div class="text">
+					<p class="text">
+						<b><a href="file/supp.pdf" target="_blank">Technical Details (PDF) </a></b> <br/>
+					</p>
+				</div>
+
+				<div class="regularHeader" style="margin-bottom:15px;text-align:left;">Results</div>
+				<div align="center" style="clear:none; margin-top:15px">
+					<img src="file/noodles.jpg" style="padding:3pt; width:89%">
+					<div class="text" style="text-align:left; font-size:10pt; margin-top:10pt">
+						<p class="text">
+							<b>Noodles.</b> (a) We drop 625 40cm-long noodles, modeled by discrete rods with C-IPC offset, into a bowl. 
+							(b) We set offset and dhat to model noodle thickness enabling the bowl to fill when they reach equilibrium. 
+							(c) We then remove the bowl to show the final intertwined, intersection-free configuration,
+							noting that thickness offsets are satisfied throughout. 
+							In (d) we then remove the volume render to highlight the geometry is simulated solely with discrete
+							rods polyline geometry.
+						</p>
+					</div>
+				</div>
+				<br />
+				<div align="center" style="clear:none; margin-top:15px">
+					<img src="file/cardShuffle.jpg" style="padding:3pt; width:89%">
+					<div class="text" style="text-align:left; font-size:10pt; margin-top:10pt">
+						<p class="text">
+							<b>"Precision" card shuffle.</b> We divide fifty-four playing cards into
+							two separate piles and bend them in preparation for a "precision" bridge
+							shuffle. Unlike a human-performed bridge finish, where cards begin interleaved, here we increase challenge by keeping the two bridged piles apart
+							and then (a) precisely, one-by-one, bottom up they are rapidly released in
+							turn to shuffle the deck (b). We partially square the deck in (c), obtaining a
+							fully shuffled stack with non-intersecting, interleaved cards that is 15.4mm
+							heigh and so well-matching the height of a standard deck (d).
+						</p>
+					</div>
+				</div>
+				<br />
+				<div align="center" style="clear:none; margin-top:15px">
+					<img src="file/twistcylinder.jpg" style="padding:3pt; width:89%">
+					<div class="text" style="text-align:left; font-size:10pt; margin-top:10pt">
+						<p class="text">
+							<b>Twisted cylinder.</b> Testing thickness modeling, contact resolution
+							and buckling under extreme and increasing stress we start twisting a 1m-
+							wide cloth cylinder with 88K nodes, a thickness offset of 1.5mm and dhat of
+							1mm. Time-stepped at h = 0.04s, C-IPC quickly obtains interesting folds
+							and soon after forms a thick central cylinder of wound cloth supported
+							by C-IPC’s finite thickness offset (upper left). In contrast, (upper right)
+							without C-IPC’s thickness offset the correct geometry can not form (nor
+							can it later capture the material’s buckling behavior) further emphasizing
+							the importance of consistent thickness modeling for shells. After 32.96s of
+							further twisting, our offset-thickened cloth continues to support complex
+							contact-driven behaviors including the final buckled geometry (bottom);
+							see our supplemental video for the detailed trajectory.
+						</p>
+					</div>
+				</div>
+				
+				<div id="related" class="regularHeader" style="margin-bottom:15px;text-align:left;">Related Projects</div>
+				<div class="text">
+					<div w3-include-html="../related.html"></div>
+				</div>
+				<br />
+			</div>
+		</div>
+		<script>
+			includeHTML();
+		</script>
+	</body>
+</html>
