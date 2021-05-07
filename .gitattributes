@@ -1,3 +1,4 @@
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 C-IPC/CIPC.mp4 filter=lfs diff=lfs merge=lfs -text
 C-IPC/file/CIPC.mp4 filter=lfs diff=lfs merge=lfs -text
+Rigid-IPC/assets/*.mp4 filter=lfs diff=lfs merge=lfs -text
