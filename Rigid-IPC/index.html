@@ -1,0 +1,231 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="description" content="Intersection-free Rigid Body Dynamics">
+	<meta name="author" content="Zachary Ferguson">
+	<title>Rigid-IPC</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<style>
+		p {
+			font: 10pt Arial
+		}
+
+		.heading {
+			font-family: 'Open Sans', serif;
+			font-size: 20pt
+		}
+
+		.subheading {
+			font-family: 'Open Sans', serif;
+			font-size: 11pt
+		}
+
+		img {
+			-webkit-box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.2);
+			box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.2);
+			-webkit-border-radius: 6px;
+			border-radius: 6px;
+		}
+
+		.main {
+			width: 1000px;
+			background-color: white;
+			margin-top: 0px;
+			margin-left: auto;
+			margin-right: auto;
+			-webkit-border-radius: 10px;
+			border-radius: 10px;
+		}
+
+		.regularHeader {
+			font: 16pt Playfair Display;
+			margin-top: 20px
+		}
+
+		td {
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+
+		.text {
+			font-family: 'Open Sans', sans-serif;
+			font-size: 11pt;
+			text-align: justify;
+			margin-left: 20px;
+			margin-right: 20px
+		}
+
+		a {
+			color: black;
+			text-decoration: none
+		}
+
+		a:hover {
+			color: green;
+			text-decoration: underline
+		}
+	</style>
+	<script src="../includeHTML.js"></script>
+</head>
+
+<body bgcolor="#dedede">
+	<div class="main">
+		<div style="margin: 0pt 15pt 25pt 15pt; padding-top:10px">
+			<div class="heading" style="text-align:center">Intersection-free Rigid Body Dynamics</div>
+			<br />
+			<div class="subheading" style="margin-top:-8pt;text-align:center;font-size:13pt">
+				<a href="https://zferg.us/">Zachary Ferguson</a><sup>1</sup>,&nbsp;
+				<a href="http://www.seas.upenn.edu/~minchenl/">Minchen Li</a><sup>2,3</sup>,&nbsp;
+				<a href="http://web.uvic.ca/~teseo/">Teseo Schneider</a><sup>1,4</sup>,&nbsp;
+				<a href="https://cs.nyu.edu/~gilureta/">Francisca Gil-Ureta</a><sup>1</sup>,&nbsp;
+				<a href="http://langlo.is/">Timothy Langlois</a><sup>5</sup>,
+				<br>
+				<a href="https://www.seas.upenn.edu/~cffjiang/">Chenfanfu Jiang</a><sup>2,3</sup>,&nbsp;
+				<a href="https://cims.nyu.edu/gcl/denis.html">Denis Zorin</a><sup>1</sup>,&nbsp;
+				<a href="http://dannykaufman.io/">Danny M. Kaufman</a><sup>5</sup>,&nbsp;
+				<a href="https://cims.nyu.edu/gcl/daniele.html">Daniele Panozzo</a><sup>1</sup>
+				<br />
+				<div style="margin-top:6pt;">
+					<sup>1</sup>New York University,&nbsp;
+					<sup>2</sup>University of California, Los Angeles,&nbsp;
+					<sup>3</sup>University of Pennsylvania,
+					<br>
+					<sup>4</sup>University of Victoria,&nbsp;
+					<sup>5</sup>Adobe Research
+				</div>
+				<div class="subheading" style="margin-top:8pt;">
+					<span style="font-style: italic">ACM Transactions on Graphics (SIGGRAPH), 2021</span>
+				</div>
+			</div>
+			<div align="center" style="clear:none; margin-top:15px">
+				<img src="assets/teaser.png" style="padding:3pt; width:99%">
+				<div class="text" style="text-align:left; font-size:10pt; margin-top:10pt">
+					<p class="text">
+						<b>Expanding Lock Box.</b> An intricate locking mechanism designed for 3D printing can be directly simulated with
+						our algorithm. As the "key" turns, the central spiral is rotated which in turn pulls in each of the five
+						locking pins. When all pins have been retracted the bottom is able to freely fall. Our algorithm's
+						intersection-free guarantee enables the automatic testing of designs without the need to tune simulation
+						parameters. © <a href="https://www.makersmuse.com/expanding-lock-box">Angus Deveson</a>.
+					</p>
+				</div>
+			</div>
+			<div class="regularHeader" style="margin-bottom:15px;text-align:left;">Paper</div>
+			<div class="text">
+				<p class="text">
+					<b><a href="assets/rigid_ipc_paper.pdf"> Paper (PDF) </a></b>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<b><a href="assets/rigid_ipc_paper_350ppi.pdf"> Low res (PDF) </a></b>
+				</p>
+			</div>
+			<div class="regularHeader" style="text-align:left;">Abstract</div>
+			<div class="text" align="center">
+				<p class="text">
+					We introduce the first implicit time-stepping algorithm for rigid body dynamics, with contact and
+					friction, that guarantees intersection-free configurations at every time step.
+				</p>
+
+				<p class="text">
+					Our algorithm explicitly models the curved trajectories traced by rigid bodies in both collision detection and
+					response. For collision detection, we propose a conservative narrow phase collision detection algorithm for curved
+					trajectories, which reduces the problem to a sequence of linear CCD queries with minimal separation. For time
+					integration and contact response, we extend the recently proposed incremental potential contact framework to
+					reduced coordinates and rigid body dynamics.
+				</p>
+
+				<p class="text">
+					We introduce a benchmark for rigid body simulation and show that our approach, while less efficient than
+					alternatives, can robustly handle a wide array of complex scenes, which cannot be simulated with competing
+					methods,
+					without requiring per-scene parameter tuning.
+				</p>
+			</div>
+			<div class="regularHeader" style="margin-bottom:15px;text-align:left;">Video</div>
+			<div class="text" align="center">
+				<p class="text">
+					<b><a href="assets/rigid-ipc-video.mp4">Video (MP4, 54.8 MB)</a></b>
+					<br /> <br />
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/J4KylEbFM8I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					    allowfullscreen style="-webkit-box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.2)"></iframe>
+					<br /> <br /> <br />
+					<b><a href="file/rigid-ipc-supplemental-video.mp4" target="_blank">Supplemental Video (MP4, 78.7 MB)</a></b>
+					<br /> <br />
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/duKEa-OKs9s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					    allowfullscreen style="-webkit-box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.2)"></iframe>
+				</p>
+			</div>
+			<div class="regularHeader" style="margin-bottom:15px;text-align:left;">Source Code and Data</div>
+			<div class="text">
+				<p class="text">
+					<i>coming soon!</i>
+					<!-- <b><a href="https://github.com/ipc-sim/rigid-ipc">Codebase</a></b> -->
+				</p>
+			</div>
+			<div class="regularHeader" style="margin-bottom:15px;text-align:left;">BibTex</div>
+			<div class="text">
+				<pre style="overflow-x: scroll;">
+@article{Ferguson:2021:RigidIPC,
+    title     = {Intersection-free Rigid Body Dynamics},
+    author    = {Zachary Ferguson and Minchen Li and Teseo Schneider and Francisca Gil-Ureta and Timothy Langlois and Chenfanfu Jiang and Denis Zorin and Danny M. Kaufman and Daniele Panozzo},
+    year      = 2021,
+    journal   = {ACM Transactions on Graphics (SIGGRAPH)},
+    volume    = 40,
+    number    = 4,
+    articleno = 183
+}
+</pre>
+			</div>
+
+			<div class="regularHeader" style="margin-bottom:15px;text-align:left;">Results</div>
+			<div align="center" style="clear:none; margin-top:15px">
+				<img src="assets/mechanisms.png" style="padding:3pt; width:89%">
+				<div class="text" style="text-align:left; font-size:10pt; margin-top:10pt">
+					<p class="text">
+						<b>Mechanisms.</b> We demonstrate the robustness of our method on various mechanisms with tight conforming
+						contact. Top: a piston is attached to a rotating disk and a static cylinder is used to constrain the motion of
+						the piston. Middle: A wheel with complex geometry rotates smoothly, but results in intermittent motion on the
+						connected wheel. Bottom: a bike chain is attached to a kinematic sprocket. Each link is modeled using a realistic
+						joint consisting of a roller, pin, and two plates. ©
+						<a href="https://free3d.com/royalty-free-license">Okan (bike chain)</a> and
+						<a href="https://www.thingiverse.com/thing:3059422">Hampus Andersson (sprocket)</a> under CC BY.
+					</p>
+				</div>
+			</div>
+			<br />
+			<div align="center" style="clear:none; margin-top:15px">
+				<img src="assets/bolt.png" style="padding:3pt; width:89%">
+				<div class="text" style="text-align:left; font-size:10pt; margin-top:10pt">
+					<p class="text">
+						<b>Bolt.</b> A bolt spins inside a static nut under gravity. Without friction, the bolt is quickly able to
+						follow the threading and begins to rotate. This is a challenging scene for many rigid body simulators due to the
+						tight sliding contacts on an extended curved area © <a href="https://www.thingiverse.com/thing:387266">YSoft be3D</a>
+						under CC BY-SA 3.0.
+					</p>
+				</div>
+			</div>
+			<br />
+			<div align="center" style="clear:none; margin-top:15px">
+				<img src="assets/anchor.png" style="padding:3pt; width:89%">
+				<div class="text" style="text-align:left; font-size:10pt; margin-top:10pt">
+					<p class="text">
+						<b>Anchor.</b> A heavy anchor attached to a chain briefly falls under gravity before being lifted by rolling
+						the chain around an axle. Natural bunching and kinking behaviors are visible. ©
+						<a href="https://www.turbosquid.com/3d-models/free-boat-3d-model/536047">Animation Anchor Line (anchor)</a>
+						under TurboSquid 3D Model License.
+					</p>
+				</div>
+			</div>
+
+			<div id="related" class="regularHeader" style="margin-bottom:15px;text-align:left;">Related Projects</div>
+			<div class="text">
+				<div w3-include-html="../related.html"></div>
+			</div>
+			<br />
+		</div>
+	</div>
+	<script>
+		includeHTML();
+	</script>
+</body>
+
+</html>
