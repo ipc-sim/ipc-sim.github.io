@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700|Roboto+Slab:400,400italic,700|Roboto+Mono:400,400italic,700&display=swap');
 
 :root {
     --video-max-width: 700px;
@@ -48,14 +48,14 @@ article {
 
 div.paper-title {
     text-align: center;
-    font-family: 'Open Sans', serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 20pt;
     margin-bottom: 15px;
 }
 
 div.authors, div.affiliations, div.venue {
     text-align: center;
-    font-family: 'Open Sans', serif;
+    font-family: 'Open Sans', sans-serif;
     max-width: 750px;
     margin-left: auto;
     margin-right: auto;
@@ -98,19 +98,24 @@ div.teaser {
 }
 
 div.teaser img {
-    padding: 3pt;
-    width: calc(100% - 6pt);
+    padding: 4px;
+    width: calc(100% - 8px);
+}
+
+div.teaser p {
+    margin-top: 10px;
 }
 
 p {
     font-family: 'Open Sans', sans-serif;
     font-size: 11pt;
     text-align: justify;
-    margin: 10pt 40px;
+    margin: 12.5px 40px;
 }
 
 section .title {
-    font: 16pt Playfair Display;
+    font-family: "Roboto Slab", serif;
+    font-size: 16pt;
     margin-top: 20px;
     margin-bottom: 15px;
     text-align: left;
@@ -154,17 +159,44 @@ div.video-wrapper iframe.youtube {
 }
 
 section.results div.figure {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
 section.results img {
-    margin: 3pt 40px;
+    margin: 4px 40px;
     width: calc(100% - 80px);
 }
 
+section.results div.figure p.caption {
+    margin-top: 6.25px;
+}
+
 section.bibtex pre {
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
     margin: 5px 40px;
     overflow-x: scroll;
+    background-color: rgb(245, 245, 245);
+    color: rgba(0, 0, 0, 0.54);
+    font-family: "Roboto Mono", monospace;
+    font-size: 9pt;
+    padding: 8px 13px;
+}
+
+pre.bibtex .tag {
+    color: #8572e6;
+}
+
+pre.bibtex .name {
+    color: #3f6ec6;
+}
+
+pre.bibtex .text {
+    color: rgb(28, 125, 77);
+}
+
+pre.bibtex .number {
+    color: #dd9474;
 }
 
 section.related p {
