@@ -1,0 +1,141 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="description" content="Guaranteed Globally Injective 3D Deformation Processing (IDP))">
+	<meta name="author" content="Minchen Li">
+	<title>IDP</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<style>
+		p {font:10pt Arial}
+		.heading {font-family: 'Open Sans', serif; font-size: 20pt}
+		.subheading {font-family: 'Open Sans', serif; font-size: 11pt}
+		img {-webkit-box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.2);
+			box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.2); -webkit-border-radius: 6px;
+			border-radius: 6px;}
+		.main {width:1000px; background-color:white; margin-top: 0px; margin-left: auto; margin-right:auto;  -webkit-border-radius: 10px;
+			border-radius: 10px;}
+		.regularHeader {font:16pt Playfair Display; margin-top:20px}
+		td {padding-top: 5px; padding-bottom: 5px;}
+		.text {font-family: 'Open Sans', sans-serif; font-size: 11pt; text-align:justify; margin-left:20px; margin-right:20px}
+		a {color:black; text-decoration:none}
+		a:hover  {color:green; text-decoration:underline}
+	</style>
+	<script src="../includeHTML.js" ></script>
+</head>
+<body bgcolor="#dedede">
+<div class="main">
+	<div style="margin: 0pt 15pt 25pt 15pt; padding-top:10px">
+		<div class="heading" style="text-align:center">Guaranteed Globally Injective 3D Deformation Processing (IDP)</div>
+		<br />
+		<div class="subheading" style="margin-top:-8pt;text-align:center;font-size:13pt">
+			<a href="http://squarefk.com/" target="_blank">Yu Fang*</a><sup>2,3</sup>,&nbsp;
+			<a href="http://www.seas.upenn.edu/~minchenl/" target="_blank">Minchen Li*</a><sup>1,2</sup>,&nbsp;
+			<a href="https://www.seas.upenn.edu/~cffjiang/" target="_blank">Chenfanfu Jiang</a><sup>1,2</sup>
+			<a href="http://dannykaufman.io/" target="_blank">Danny M. Kaufman</a><sup>3</sup>,&nbsp;
+			<br />
+			<div style="margin-top:6pt;font-size:11pt">*Joint first authors </div>
+			<div style="margin-top:6pt;font-size:11pt"><sup>1</sup>University of California, Los Angeles,&nbsp; <sup>2</sup>University of Pennsylvania,&nbsp; <sup>3</sup>Adobe Research</text></div>
+			<div class="subheading" style="margin-top:8pt;"><span style="font-style: italic">ACM Transactions on Graphics (SIGGRAPH), 2021</span></div>
+		</div>
+		<div align="center" style="clear:none; margin-top:15px">
+			<img src="file/dumpling.png" style="padding:3pt; width:99%">
+			<div class="text" style="text-align:left; font-size:10pt; margin-top:10pt">
+				<p class="text">
+					<b>Making dumplings:</b> Injective Deformation Processing (IDP) enables reliable and efficient deformation with a guarantee of injectivity
+					for a wide range of tasks. Here, applied for modeling and layout with a tetrahedral mesh, we can emulate manual steps with IDP to directly
+					form a complex model from simple primitives in just a few steps. Once complete, we copy-paste the model. Then layout, with non-intersection enforced,
+					provides natural variation for the copies as we nudge the plated dumplings for a final arrangement.
+				</p>
+			</div>
+		</div>
+		<div class="regularHeader" style="margin-bottom:15px;text-align:left;">Paper</div>
+		<div class="text">
+			<p class="text">
+				<b><a href="file/paper.pdf" target="_blank"> Paper (PDF) </a></b>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<b><a href="file/paper_small.pdf" target="_blank"> Low res (PDF) </a></b>
+			</p>
+		</div>
+		<div class="regularHeader" style="text-align:left;">Abstract</div>
+		<div class="text" align="center">
+			<p class="text">
+				We extend recent advances in the numerical time-integration of contacting elastodynamics Incremental Potential Contact (IPC) to build a new framework, called
+				Injective Deformation Processing (IDP), for the robust solution of a wide range of mesh deformation problems requiring injectivity. IDP solves challenging
+				3D (and 2D) geometry processing and animation tasks on meshes, via artificial time integration, with guarantees of both non-inversion and non-overlap.
+				To our knowledge IDP is the first framework for 3D deformation processing that can efficiently guarantee globally injective deformation without geometric
+				locking. We demonstrate its application on a diverse set of problems and show its significant improvement over state-of-the-art  for globally injective 3D
+				deformation.
+			</p>
+		</div>
+		<div class="regularHeader" style="margin-bottom:15px;text-align:left;">Video</div>
+		<div class="text" align="center">
+			<p class="text">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/zvOFcGLHQv8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="-webkit-box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.2)"></iframe>
+				<br /> <br />
+			</p>
+		</div>
+		<div class="regularHeader" style="margin-bottom:15px;text-align:left;">Source Code and Data</div>
+		<div class="text">
+			<p class="text">
+				<i>coming soon!</i>
+				<!-- <b><a href="https://github.com/ipc-sim/IPC" target="_blank">Codebase</a></b> -->
+			</p>
+		</div>
+		<div class="regularHeader" style="margin-bottom:15px;text-align:left;">BibTex</div>
+		<div class="text">
+			<p class="text">
+				@article{Fang2021IDP,<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;author  = {Yu Fang and Minchen Li and Chenfanfu Jiang and Danny M. Kaufman},<br/>
+				&nbsp;&nbsp;&nbsp; title   = {Guaranteed Globally Injective 3D Deformation Processing},<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;journal = {ACM Trans. Graph. (SIGGRAPH)},<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;year    = {2021},<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;volume = {40},<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;number = {4},<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;articleno = {75}<br/>
+				}
+			</p>
+		</div>
+		<div class="regularHeader" style="margin-bottom:15px;text-align:left;">Results</div>
+		<div align="center" style="clear:none; margin-top:15px">
+			<img src="file/flow_in.png" style="padding:3pt; width:89%">
+			<div class="text" style="text-align:left; font-size:10pt; margin-top:10pt">
+				<p class="text">
+					<b>Negative (inward) normal flow</b> with IDP obtains shape skeletons that remain watertight, topology
+					preserving and non-intersecting even for extreme flows.}
+				</p>
+			</div>
+		</div>
+		<br />
+		<div align="center" style="clear:none; margin-top:15px">
+			<img src="file/mousey.png" style="padding:3pt; width:89%">
+			<div class="text" style="text-align:left; font-size:10pt; margin-top:10pt">
+				<p class="text">
+					<b>Mousey sequence animation repair. </b> Animation sequences often contain unacceptable and severe intersection
+						artifacts. Here in the Mousey sequence (a and d) arms intersect both the belly and hip. IDP's clean up (b and
+						e) removes all intersection from all frames while creating indentations on the belly and hip as pushed by the hand.
+				</p>
+			</div>
+		</div>
+		<br />
+		<div align="center" style="clear:none; margin-top:15px">
+			<img src="file/vase.png" style="padding:3pt; width:89%">
+			<div class="text" style="text-align:left; font-size:10pt; margin-top:10pt">
+				<p class="text">
+					<b>A Flower arrangement</b> layout is created by placing all modeled flowers in a vase. Deformation and contact ensure the models naturally rest
+					against each other and the final vase geometry.
+				</p>
+			</div>
+		</div>
+
+		<div id="related" class="regularHeader" style="margin-bottom:15px;text-align:left;">Related Projects</div>
+		<div class="text">
+			<div w3-include-html="../related.html"></div>
+		</div>
+		<br />
+	</div>
+</div>
+<script>
+	includeHTML();
+</script>
+</body>
+</html>
